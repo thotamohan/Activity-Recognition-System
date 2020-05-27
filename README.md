@@ -114,12 +114,33 @@ Also, here we encountered the problem of class imbalance, which may make some of
 Here I reported the confusion matrix and show the ROC and AUC for your classifier on train data. and reported the parameters of your logistic regression βi’s as well as the p-values associated with them.
 
 # **Testing Dataset performance:**
-Let us test the classifier on the test set. Remember to break the time series in your test set into the same number of time series into which you broke your training set. Remember that the classifier has to be tested using the features extracted from the test set. Compare the accuracy on the test set with the cross-validation accuracy you obtained previously.
+Let us test the classifier on the test set. Remember to break the time series in your test set into the same number of time series into which you broke your training set. Remember that the classifier has to be tested using the features extracted from the test set. 
+
+## **Analysis**
+**Compare the accuracy on the test set with the cross-validation accuracy you obtained previously?**
+* From the above results, we could see that the test accuracy and the train accuracy obtained is 100%. This is because the classes are well seperated. 
+* This causes instability in the calculation of parameters of Logistic Regression.
+* As a result the estimated p-values are higher. This causes Maximum Likelihood Estimate to fail Leading in a Perfect Seperation Error.
+
+**From the confusion matrices you obtained, do you see imbalanced classes?**
+
+* It is clearly evident that the classes obtained are imbalanced, let us use oversampling using SMOTE to handle this problem.
+* therefore let us  build a logistic regression model based on case-control sampling and adjust its parameters. 
+* Now report the confusion matrix, ROC, and AUC of the model.
+
+# **Binary Classification Using L1-penalized logistic regression:**
+Now let us repeat the above mentioned procedure using L1-penalized logistic regression i.e. instead of using pvalues for variable selection, use L1 regularization. 
+
+Note that in this problem, you have to cross-validate for both l, the number of time series into which you break each of your instances, and λ, the weight of L1 penalty in your logistic regression objective function (or C, the budget). Packages usually perform
+cross-validation for λ automatically.
+
+## **Analysis:**
+**Now let us compare the L1-penalised with variable selection using p-values?**
+* L1 regularization can be used to feature selection. As the feature coefficients become zero here.
+* It is easier to implement than Recursive Feature Selection or based on p values because.
+* it just involves solving the optimization problem with a constraint.
 
 
-**## Analysis**
-From the above results, we could see that the test accuracy and the train accuracy obtained is 100%. This is because the classes are well seperated. This causes instability in the calculation of parameters of Logistic Regression.
-As a result the estimated p-values are higher. This causes Maximum Likelihood Estimate to fail Leading in a Perfect Seperation Error.
 
 
 
