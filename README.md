@@ -1,6 +1,6 @@
 # Activity Recognition system based on Multisensor data fusion (AReM)
 
-## **Task:**
+# **Problem description:**
 An interesting task in machine learning is classification of time series. In this problem,
 I will classify the activities of humans based on time series obtained by a Wireless
 Sensor Network.
@@ -78,7 +78,7 @@ From the above table we could see that, for each instance six features are extra
 
 From the displayed table, three most important features namely mean, median and mode are selected and used for the machine learning problem. *The extracted features for each of the time series are mean, median and standard deviation, this is because these three statastics for important parameters to describe most of the probability distributions*. Now the shape of our feature dataframe is 18 * 88.
 
-## **Binary Classification using Logistic Regression**
+# **Binary Classification using Logistic Regression**
 
 **Case 1:**
 Let us assume that you want to use the training set to classify bending from other activities, i.e. you have a binary classification problem. 
@@ -113,7 +113,7 @@ Also, here we encountered the problem of class imbalance, which may make some of
 
 Here I reported the confusion matrix and show the ROC and AUC for your classifier on train data. and reported the parameters of your logistic regression βi’s as well as the p-values associated with them.
 
-# **Testing Dataset performance:**
+## **Testing Dataset performance:**
 Let us test the classifier on the test set. Remember to break the time series in your test set into the same number of time series into which you broke your training set. Remember that the classifier has to be tested using the features extracted from the test set. 
 
 ## **Analysis**
@@ -135,10 +135,47 @@ Note that in this problem, you have to cross-validate for both l, the number of 
 cross-validation for λ automatically.
 
 ## **Analysis:**
+
 **Now let us compare the L1-penalised with variable selection using p-values?**
-* L1 regularization can be used to feature selection. As the feature coefficients become zero here.
-* It is easier to implement than Recursive Feature Selection or based on p values because.
-* it just involves solving the optimization problem with a constraint.
+* L1 regularization can be applied to feature selection. As the feature coefficients become zero here which helps in dimensionality reduction.
+* Comparitively it is easier to implement than Recursive Feature Selection or p-values based feature selection because it just involves solving the optimization problem with a constraint.
+
+# Multi-class Classification (The Realistic Case)
+
+## **L-1 Penalised multinomial regression model:**
+
+Here I found the best l in the same way as  found it for Logistic regression to build an L1-penalized multinomial regression model to classify all activities in my training set.
+
+Below I reported my test error. 
+
+I researched how confusion matrices and ROCcurves are defined for multiclass classification and showed them for this problem.
+
+## **Naive Bayes Classifier:**
+
+I repeated the same procedure using Naive Bayes Classifier, used both Gaussian and Multinomial priors and the results are compared as follows:
+
+Optimal 'l' value: 1
+**Test Accuracy: 100.0** 
+
+Confusion Matrix:
+[[2 0 0 0 0 0 0]
+ [0 2 0 0 0 0 0]
+ [0 0 3 0 0 0 0]
+ [0 0 0 3 0 0 0]
+ [0 0 0 0 2 1 0]
+ [0 0 0 0 0 2 1]
+ [0 0 0 0 0 0 3]]
+
+
+## ** Analysis:**
+
+From the above results we could see that
+* Here Naive Bayes assumes that the features are independent with respect to a given class.
+* But remember that, the features extracted are from same time series column which makes the features not independent and this is contrast to the Naive Bayes assumption that features are independent.
+* This makes Naive Bayes not a good choice for the problem.
+
+
+
 
 
 
