@@ -116,15 +116,15 @@ Here I reported the confusion matrix and show the ROC and AUC for your classifie
 ## **Testing Dataset performance:**
 Let us test the classifier on the test set. Remember to break the time series in your test set into the same number of time series into which you broke your training set. Remember that the classifier has to be tested using the features extracted from the test set.
 
-**Optimal 'l' value: 1**
+* **Optimal 'l' value: 1**
 
-**No of features: 4**
+* **No of features: 4**
 
-**Test Accuracy percentage: 100.0**
+* **Test Accuracy percentage: 100.0**
 
-**ROC AUC SCORE: 1.0**
+* **ROC AUC SCORE: 1.0**
 
-**Coefficients Estimated: [[ 1.49555791  2.32928127 -1.53029071 -1.20228407]]**
+* **Coefficients Estimated: [[ 1.49555791  2.32928127 -1.53029071 -1.20228407]]**
 
 
 ## **Analysis**
@@ -139,15 +139,15 @@ Let us test the classifier on the test set. Remember to break the time series in
 * therefore let us  build a logistic regression model based on case-control sampling and adjust its parameters. 
 * Now report the confusion matrix, ROC, and AUC of the model.
 
-**Optimal 'l' value: 3**
+* **Optimal 'l' value: 3**
 
-**No of features: 5**
+* **No of features: 5**
 
-**Test Accuracy percentage: 100.0**
+* **Test Accuracy percentage: 100.0**
 
-**ROC AUC SCORE: 1.0**
+* **ROC AUC SCORE: 1.0**
 
-**Coefficients Estimated: [[ 1.17579614  0.38350799  1.43869949 -1.21071929 -1.12110033]]**
+* **Coefficients Estimated: [[ 1.17579614  0.38350799  1.43869949 -1.21071929 -1.12110033]]**
 
 # **Binary Classification Using L1-penalized logistic regression:**
 Now let us repeat the above mentioned procedure using L1-penalized logistic regression i.e. instead of using pvalues for variable selection, use L1 regularization. 
@@ -155,11 +155,11 @@ Now let us repeat the above mentioned procedure using L1-penalized logistic regr
 Note that in this problem, you have to cross-validate for both l, the number of time series into which you break each of your instances, and λ, the weight of L1 penalty in your logistic regression objective function (or C, the budget). Packages usually perform
 cross-validation for λ automatically.
 
-**Optimal 'l' value: 1**
+* **Optimal 'l' value: 1**
 
-**Total Significant Features: 7**
+* **Total Significant Features: 7**
 
-**Test Accuracy percentage: 100.0**
+* **Test Accuracy percentage: 100.0**
 
 ## **Analysis:**
 
@@ -174,9 +174,9 @@ cross-validation for λ automatically.
 Here I found the best l in the same way as  found it for Logistic regression to build an L1-penalized multinomial regression model to classify all activities in my training set.
 Below I reported my test Accuracy. 
 
-**Optimal 'l' value: 2**
+* **Optimal 'l' value: 2**
 
-**Test Accuracy: 100.0%** 
+* **Test Accuracy: 100.0%** 
 
 I researched how confusion matrices and ROCcurves are defined for multiclass classification and showed them for this problem.
 
@@ -184,9 +184,9 @@ I researched how confusion matrices and ROCcurves are defined for multiclass cla
 
 I repeated the same procedure using Naive Bayes Classifier, used both Gaussian and Multinomial priors and the results are compared as follows:
 
-**Optimal 'l' value: 1**
+* **Optimal 'l' value: 1**
 
-**Test Accuracy: 89.47%** 
+* **Test Accuracy: 89.47%** 
 
 
 
