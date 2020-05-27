@@ -1,6 +1,18 @@
 # Activity Recognition system based on Multisensor data fusion (AReM)
 
-## Human-activity-Classification-based-on-time-series-data
+## **Task:**
+An interesting task in machine learning is classification of time series. In this problem,
+we will classify the activities of humans based on time series obtained by a Wireless
+Sensor Network.
+
+## **Dataset details**
+The dataset contains 7 folders that represent seven types of activities. In
+each folder, there are multiple files each of which represents an instant of a human
+performing an activity.1 Each file containis 6 time series collected from activities
+of the same person, which are called avg rss12, var rss12, avg rss13, var rss13,
+vg rss23, and ar rss23. There are 88 instances in the dataset, each of which contains 6 time series and each time series has 480 consecutive values.
+
+
 ## **Data Set Information:**
 
 This dataset represents a real-life benchmark in the area of Activity Recognition applications, as described in [1].
@@ -24,6 +36,7 @@ For each sequence, data is provided in comma separated value (csv) format.
 
 **- Input data:**
 Input RSS streams are provided in files named datasetID.csv, where ID is the progressive numeric sequence ID for each repetition of the activity performed.
+
 In each file, each row corresponds to a time step measurement (in temporal order) and contains the following information:
 avg_rss12, var_rss12, avg_rss13, var_rss13, avg_rss23, var_rss23
 where avg and var are the mean and variance values over 250 ms of data, respectively.
@@ -35,6 +48,29 @@ For each activity, we have the following parameters:
 * Frequency (Hz): 20
 * Clock (millisecond): 250
 * Total duration (seconds): 120
+
+## **Training and Testing Dataset**
+As we know that, the dataset is to be divided into training and test datasets for training and testing the Machine learning algorithms.
+In our project, let us keep datasets 1 and 2 in folders bending1 and bending 2, as well as datasets 1,2, and 3 in other folders as test data and other datasets as train data.
+Therefore there are a total of 69 instances of training and 19 instances in testing dataset.
+
+## **Feature Extraction**
+
+Classification of time series usually needs extracting features from them. In this problem, we focus on time-domain features.
+i. Researched what types of time-domain features are usually used in time series classification and listed them.
+* Features usually used in time-series classification problems are minimum, maximum, mean, median, standard deviation, first quartile, and third quartile of each time-series. 
+
+ii. Therefore with respect to the project extracted the time-domain features minimum, maximum, mean, median, standard deviation, first quartile, and third quartile for all of the 6 time series in each instance. You are free to normalize/standardize features or use them
+directly.2
+Your new dataset will look like this:
+|Instance| min1 |max1| mean1| median1|-----|------|------|min6|max6|mean6|median6|1st quart6| 3rd quart6|
+|--------|------|----|------|--------|-----|------|------|----|----|-----|-------|----------|-----------|
+|1|
+|2|
+|3|
+|'|
+|'|
+|88|
 
 ## **Source:**
 Filippo Palumbo (a,b), Claudio Gallicchio (b), Rita Pucci (b) and Alessio Micheli (b)
