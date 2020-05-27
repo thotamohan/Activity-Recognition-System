@@ -2,7 +2,7 @@
 
 ## **Task:**
 An interesting task in machine learning is classification of time series. In this problem,
-we will classify the activities of humans based on time series obtained by a Wireless
+I will classify the activities of humans based on time series obtained by a Wireless
 Sensor Network.
 
 ## **Dataset details**
@@ -58,7 +58,7 @@ Therefore there are a total of 69 instances of training and 19 instances in test
 
 ## **Feature Extraction**
 
-Classification of time series usually needs extracting features from them. In this problem, we focus on time-domain features.
+Classification of time series usually needs extracting features from them. In this problem, I focus on time-domain features.
 i. Researched what types of time-domain features are usually used in time series classification and listed them.
 * Features usually used in time-series classification problems are minimum, maximum, mean, median, standard deviation, first quartile, and third quartile of each time-series. 
 
@@ -94,6 +94,36 @@ When there are more features, there is definitely a chance to understand the pat
 This can be observed in the above Scatterplots too. In some of the plots above, we can see a clear distinction 
 between the classes in some scatter plots than the ones before.
 So, it would be good idea to divide the scatter plots multiple times and extract the features from them.** 
+
+Let us now break each time series in your training set into l ∈ {1, 2, . . . , 20} time series of approximately equal length and use logistic regression to solve the binary classification problem, using time-domain features. 
+
+Remember that breaking each of the time series does not change the number of instances. It only changes the number of features for each instance. Here let us calculate the p-values for your logistic regression parameters in each model corresponding to each value
+of l and refit a logistic regression model using your pruned set of features.Alternatively, you can use backward selection using sklearn.feature selection or glm in R. Here I used 5-fold cross-validation to determine the best value of the pair (l, p), where p is the number of features used in recursive feature elimination.
+
+Here they are two ways of performing cross validation, for finding best value of pair(l,p). The right way to do Cross Validation would be to 
+1) Feature Selection
+2) Cross Validate
+
+The wrong way of doing is:
+1) Cross Validate
+2) Feature Selection
+
+Also, here we encountered the problem of class imbalance, which may make some of your folds not having any instances of the rare class.
+**Stratified Cross Validation** can be used as this is an Imbalanced Dataset. This can be helpful to repersent every class is repersented in each fold.
+
+Here I reported the confusion matrix and show the ROC and AUC for your classifier on train data. and reported the parameters of your logistic regression βi’s as well as the p-values associated with them.
+
+# **Testing Dataset performance:**
+Let us test the classifier on the test set. Remember to break the time series in your test set into the same number of time series into which you broke your training set. Remember that the classifier has to be tested using the features extracted from the test set. Compare the accuracy on the test set with the cross-validation accuracy you obtained previously.
+
+
+**## Analysis**
+From the above results, we could see that the test accuracy and the train accuracy obtained is 100%. This is because the classes are well seperated. This causes instability in the calculation of parameters of Logistic Regression.
+As a result the estimated p-values are higher. This causes Maximum Likelihood Estimate to fail Leading in a Perfect Seperation Error.
+
+
+
+
 
 ## **Source:**
 Filippo Palumbo (a,b), Claudio Gallicchio (b), Rita Pucci (b) and Alessio Micheli (b)
