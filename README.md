@@ -63,7 +63,7 @@ i. Researched what types of time-domain features are usually used in time series
 ii. Therefore with respect to the project extracted the time-domain features minimum, maximum, mean, median, standard deviation, first quartile, and third quartile for all of the 6 time series in each instance. You are free to normalize/standardize features or use them
 directly.2
 Your new dataset will look like this:
-|Instance| min1 |max1| mean1| median1|-----|------|------|min6|max6|mean6|median6|1st quart6| 3rd quart6|
+|Instance| min1 |max1| mean1| median1|-|-|-|min6|max6|mean6|median6|1st quart6| 3rd quart6|
 |--------|------|----|------|--------|-----|------|------|----|----|-----|-------|----------|-----------|
 |1|
 |2|
