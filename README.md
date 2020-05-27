@@ -28,7 +28,9 @@ We choose an epoch time of 250 milliseconds according to the EVAAL technical ann
 
 For each activity 15 temporal sequences of input RSS data are present. The dataset contains 480 sequences, for a total number of 42240 instances.
 
-We also consider two kind of bending activity, illustrated in the figure provided (bendingTupe.pdf). The positions of sensor nodes with the related identifiers are shown in figure sensorsPlacement.pdf.
+We also consider two kind of 
+
+activity, illustrated in the figure provided (bendingTupe.pdf). The positions of sensor nodes with the related identifiers are shown in figure sensorsPlacement.pdf.
 
 ## **Attribute Information:**
 
@@ -63,14 +65,35 @@ i. Researched what types of time-domain features are usually used in time series
 ii. Therefore with respect to the project extracted the time-domain features minimum, maximum, mean, median, standard deviation, first quartile, and third quartile for all of the 6 time series in each instance. You are free to normalize/standardize features or use them
 directly.2
 Your new dataset will look like this:
-|Instance| min1 |max1| mean1| median1|-|-|-|min6|max6|mean6|median6|1st quart6| 3rd quart6|
-|--------|------|----|------|--------|-----|------|------|----|----|-----|-------|----------|-----------|
+|Instance| min1 |max1| mean1| median1|-|-|-|min6|max6|mean6|median6|1st quart6| 3rd quart6|label|
+|--------|------|----|------|--------|-----|------|------|----|----|-----|-------|----------|-----------|----|
 |1|
 |2|
 |3|
 |'|
 |'|
 |88|
+
+From the above table we could see that, for each instance six features are extracted  making the feature dataframe shape to 36 * 88. Here the label column is added to the dataframe which is target column that we are predicting. Here as already mentioned, the folders in which they are present, the folder name is given as label. As there are 7 folders, there are a total of seven activities. namely bending1, bending2, cycling, sitting, standing, walking, lying. Since the labels are text data, they are encoded to integers using scikit-learn encoder function.
+
+From the displayed table, three most important features namely mean, median and mode are selected and used for the machine learning problem. *The extracted features for each of the time series are mean, median and standard deviation, this is because these three statastics for important parameters to describe most of the probability distributions*. Now the shape of our feature dataframe is 18 * 88.
+
+## **Binary Classification using Logistic Regression**
+
+**Case 1:**
+Let us assume that you want to use the training set to classify bending from other activities, i.e. you have a binary classification problem. 
+
+Scatter plots are depicted of the features extracted of each instance and used color to distinguish bending vs other activities. the plot is as follows.
+
+**Case 2**
+Let us break each time series in your training set into two (approximately) equal length time series. Now instead of 6 time series for each of the training instances, you have 12 time series for each training instance. Let us extract the 3 most important time series features from this 12 time series columns. Now depict scatter plots of the features extracted from both parts of the time series 1,2, and 12. Do you see any considerable difference in the results with those of case 1? 
+
+**When the features are extracted by dividing the time series dataset into "TWO", there are more no of features than the original one.
+Scatter Plots are used to understand the effect of features on the classification problem.
+When there are more features, there is definitely a chance to understand the patterns better. 
+This can be observed in the above Scatterplots too. In some of the plots above, we can see a clear distinction 
+between the classes in some scatter plots than the ones before.
+So, it would be good idea to divide the scatter plots multiple times and extract the features from them.** 
 
 ## **Source:**
 Filippo Palumbo (a,b), Claudio Gallicchio (b), Rita Pucci (b) and Alessio Micheli (b)
