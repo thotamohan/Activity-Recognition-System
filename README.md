@@ -134,6 +134,10 @@ Now let us repeat the above mentioned procedure using L1-penalized logistic regr
 Note that in this problem, you have to cross-validate for both l, the number of time series into which you break each of your instances, and λ, the weight of L1 penalty in your logistic regression objective function (or C, the budget). Packages usually perform
 cross-validation for λ automatically.
 
+**Optimal 'l' value: 1**
+**Total Significant Features: 7**
+**Test Accuracy percentage: 100.0**
+
 ## **Analysis:**
 
 **Now let us compare the L1-penalised with variable selection using p-values?**
@@ -145,8 +149,10 @@ cross-validation for λ automatically.
 ## **L-1 Penalised multinomial regression model:**
 
 Here I found the best l in the same way as  found it for Logistic regression to build an L1-penalized multinomial regression model to classify all activities in my training set.
+Below I reported my test Accuracy. 
 
-Below I reported my test error. 
+**Optimal 'l' value: 2**
+**Test Accuracy: 100.0%** 
 
 I researched how confusion matrices and ROCcurves are defined for multiclass classification and showed them for this problem.
 
@@ -154,17 +160,9 @@ I researched how confusion matrices and ROCcurves are defined for multiclass cla
 
 I repeated the same procedure using Naive Bayes Classifier, used both Gaussian and Multinomial priors and the results are compared as follows:
 
-Optimal 'l' value: 1
-**Test Accuracy: 100.0** 
+**Optimal 'l' value: 1**
+**Test Accuracy: 89.47%** 
 
-Confusion Matrix:
-[[2 0 0 0 0 0 0]
- [0 2 0 0 0 0 0]
- [0 0 3 0 0 0 0]
- [0 0 0 3 0 0 0]
- [0 0 0 0 2 1 0]
- [0 0 0 0 0 2 1]
- [0 0 0 0 0 0 3]]
 
 
 ## ** Analysis:**
