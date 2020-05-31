@@ -30,8 +30,8 @@ For each activity 15 temporal sequences of input RSS data are present. The datas
 
 We also consider two kind of activity, illustrated in the figure provided (bendingTupe.pdf). The positions of sensor nodes with the related identifiers are shown in figure sensorsPlacement.pdf.
 
-![Image of Yaktocat](https://github.com/thotamohan/Human-activity-Classification-based-on-time-series-data/blob/master/sensorsPlacement-page-001.jpg)
-
+![Image of Sensorplacement](https://github.com/thotamohan/Human-activity-Classification-based-on-time-series-data/blob/master/sensorsPlacement-page-001.jpg) ![Image of Sensorplacement](bendingType-page-001.jpg "title-1")
+ 
 
 ## **Attribute Information:**
 
