@@ -190,23 +190,15 @@ I repeated the same procedure using Naive Bayes Classifier, used both Gaussian a
 
 
 
-## ** Analysis:**
+## **Analysis:**
 
 From the above results we could see that
 * Here Naive Bayes assumes that the features are independent with respect to a given class.
 * But remember that, the features extracted are from same time series column which makes the features not independent and this is contrast to the Naive Bayes assumption that features are independent.
 * This makes Naive Bayes not a good choice for the problem.
 
-
-
-
-
-
-
-
-
-
 ## **Source:**
+
 Filippo Palumbo (a,b), Claudio Gallicchio (b), Rita Pucci (b) and Alessio Micheli (b)
 (a) Institute of Information Science and Technologies â€œAlessandro Faedoâ€, National Research Council, Pisa, Italy
 (b) Department of Computer Science, University of Pisa, Pisa, Italy
@@ -216,7 +208,3 @@ Filippo Palumbo (a,b), Claudio Gallicchio (b), Rita Pucci (b) and Alessio Michel
 [1] F. Palumbo, C. Gallicchio, R. Pucci and A. Micheli, Human activity recognition using multisensor data fusion based on Reservoir Computing, Journal of Ambient Intelligence and Smart Environments, 2016, 8 (2), pp. 87-107.
 
 [2] F. Palumbo, P. Barsocchi, C. Gallicchio, S. Chessa and A. Micheli, Multisensor data fusion for activity recognition based on reservoir computing, in: Evaluating AAL Systems Through Competitive Benchmarking, Communications in Computer and Information Science, Vol. 386, Springer, Berlin, Heidelberg, 2013, pp. 24â€“35.
-
-
-
-
